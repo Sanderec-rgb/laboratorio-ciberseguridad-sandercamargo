@@ -6,16 +6,16 @@ class CustomHandler(SimpleHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/html; charset=utf-8")
         self.end_headers()
-        
+
         # Personalizar con el nombre del estudiante / grupo
-       estudiante = os.getenv("ESTUDIANTE_NOMBRE", "Sander Camargo")
-        
+        estudiante = os.getenv("ESTUDIANTE_NOMBRE", "Sander Camargo")
+
         html_content = f"""
         <!DOCTYPE html>
         <html lang="es">
         <head>
             <meta charset="UTF-8">
-            <title>Servidor Web DMZ</title>
+            <title>Servidor DMZ Activo - Laboratorio de Sander Camargo</title>
             <style>
                 body {{ font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; }}
                 .container {{ background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }}
@@ -25,7 +25,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
         </head>
         <body>
             <div class="container">
-                <h1>🛡️ Servidor Objetivo DMZ</h1>
+                <h1>🛡️ Servidor DMZ Activo - Laboratorio de Sander Camargo</h1>
                 <p>Estado del servicio: <span class="status">ONLINE / ACTIVO</span></p>
                 <hr>
                 <p><strong>Laboratorio de Ciberseguridad:</strong> {estudiante}</p>
